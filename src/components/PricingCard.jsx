@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { get } from '@utils/request'
 import PayssionSelect from '@components/payssion/PayssionSelect'
 import useHandlers from './payssion/hooks/useHandlers'
-import { PAY_TYPE } from './payments/useOnerway'
+import Apg from '@components/Apg'
 import PaymentNet from '@components/paymentNet'
 import Asiapay from '@components/Asiapay'
 
@@ -285,6 +285,7 @@ export default function PricingCard() {
 						)}
 
 						<div className='flex flex-col gap-2 mt-auto'>
+							<Apg product={product} />
 							<Asiapay product={product} />
 							<PaymentNet product={product} />
 							{/* <a
