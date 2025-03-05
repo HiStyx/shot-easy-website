@@ -6,6 +6,8 @@ import PayssionSelect from '@components/payssion/PayssionSelect'
 import useHandlers from './payssion/hooks/useHandlers'
 import Apg from '@components/Apg'
 import PaymentNet from '@components/paymentNet'
+import Airwallex from './pricing/Airwallex'
+import AirwallexCallback from './pricing/Airwallex/Callback'
 import Asiapay from '@components/Asiapay'
 
 const features = [
@@ -285,9 +287,10 @@ export default function PricingCard() {
 						)}
 
 						<div className='flex flex-col gap-2 mt-auto'>
-							<Apg product={product} />
+              <Apg product={product} />
 							<Asiapay product={product} />
 							<PaymentNet product={product} />
+							<Airwallex product={product}/>
 							{/* <a
 								href={`/pricing/onerway?id=${product.id}&type=${PAY_TYPE.applepay}&name=${
 									product.name
@@ -339,6 +342,7 @@ export default function PricingCard() {
 				))}
 			</div>
 			<PayssionSelect {...handlers} product={product} />
+			<AirwallexCallback />
 		</>
 	)
 }
