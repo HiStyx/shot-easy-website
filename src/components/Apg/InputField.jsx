@@ -81,7 +81,7 @@ const InputField = (
             /* 背景色设为透明 */
             background-color: transparent !important;
             /* 文本颜色设为黑色 */
-            -webkit-text-fill-color: white !important;
+            -webkit-text-fill-color: black !important;
             /* 移除拼写检查的红色波浪线 */
             -webkit-spell-check: none !important;
             -ms-spell-check: none !important;
