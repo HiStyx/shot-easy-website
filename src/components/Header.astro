@@ -2,7 +2,6 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Logo from "@components/Logo.astro";
 import { getLocale, getLang } from "@i18n/index";
-import { isTemplateSpan } from "typescript";
 const { pathname } = Astro.url;
 const { locale } = Astro.params;
 const lang = getLocale(locale);
@@ -47,11 +46,12 @@ const navList = [
   //   name: nav.talkingPhoto.name,
   //   hot: true,
   // },
-  // {
-  //   pathname: getRelativeLocaleUrl(lang, "/products"),
-  //   title: nav.marketplace.title,
-  //   name: nav.marketplace.name,
-  // },
+  {
+    pathname: getRelativeLocaleUrl(lang, "/products"),
+    title: nav.marketplace.title,
+    name: nav.marketplace.name,
+    hidden: Astro.cookies.get("vercel_country_code")?.value === "CN",
+  },
   {
     pathname: getRelativeLocaleUrl(lang, "/pricing"),
     title: "Pricing",
@@ -79,6 +79,7 @@ const navList = [
   >
     {
       navList.map((item) => {
+        if (item.hidden) return null;
         if (pathname.toLocaleLowerCase() === item.pathname.toLocaleLowerCase())
           return (
             <span class="relative">
