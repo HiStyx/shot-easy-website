@@ -128,10 +128,17 @@ const useHandlers = () => {
 				client_secret: clientSecret,
 				withBilling: true,
 				requiredBillingContactFields: ['name', 'email'],
-				mode: 'payment',
+				mode: 'recurring',
 				successUrl,
 				failUrl,
 				country_code: cookie.get('vercel_country_code'),
+				recurringOptions :{
+          card: {
+            next_triggered_by: 'merchant',
+            merchant_trigger_reason: 'scheduled',
+            currency
+          }
+				}
 			}
 
 			// apple pay专用
