@@ -215,7 +215,7 @@ function PasswordInput({ authTips, disabled, handleChange }) {
 							<path
 								d='M12 5a1 1 0 0 1 .997.925L13 6v2h2.584l1.709-1.707a1 1 0 0 1 1.473 1.35l-.059.064-.45.452a5.002 5.002 0 0 1-1.04 9.836L17 18H7a5 5 0 0 1-1.256-9.84l-.451-.453a1 1 0 0 1 1.35-1.473l.064.059L8.415 8H11V6a1 1 0 0 1 1-1zm5 5H7a3 3 0 0 0-.176 5.995L7 16h10a3 3 0 0 0 0-6zm-5 1a2 2 0 1 1 0 4 2 2 0 0 1 0-4z'
 								fill='#000'
-								fill-rule='evenodd'
+								fillRule='evenodd'
 								opacity='.8'
 							/>
 						</svg>

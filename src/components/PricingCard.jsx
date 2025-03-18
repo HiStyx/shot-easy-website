@@ -4,13 +4,20 @@ import { useEffect, useState } from 'react'
 import { get } from '@utils/request'
 import PayssionSelect from '@components/payssion/PayssionSelect'
 import useHandlers from './payssion/hooks/useHandlers'
-import { PAY_TYPE } from './payments/useOnerway'
+import Apg from '@components/Apg'
 import PaymentNet from '@components/paymentNet'
+import Airwallex from './pricing/Airwallex'
+import AirwallexCallback from './pricing/Airwallex/Callback'
 import Asiapay from '@components/Asiapay'
 
 const features = [
 	['Individual configuration', 'No setup, or hidden fees', 'Credits'],
 	['Supports Up to 2 Devices/Users', 'No setup, or hidden fees', 'Credits'],
+	[
+		'Supports Up to 5 Devices/Users',
+		'No setup, or hidden fees',
+		'120 Credits'
+	],
 	[
 		'Supports Up to 10 Devices/Users',
 		'No setup, or hidden fees',
@@ -221,6 +228,10 @@ export default function PricingCard() {
 					desc: 'Relevant for multiple users, extended & premium support.',
 				},
 				{
+					title: 'Standard Package',
+					desc:'Perfect for growing teams requiring additional resources and flexibility.'
+				},
+				{
 					title: 'Business Package',
 					desc: 'Best for large scale uses and extended redistribution rights.',
 				},
@@ -285,8 +296,10 @@ export default function PricingCard() {
 						)}
 
 						<div className='flex flex-col gap-2 mt-auto'>
+              <Apg product={product} />
 							<Asiapay product={product} />
 							<PaymentNet product={product} />
+							<Airwallex product={product}/>
 							{/* <a
 								href={`/pricing/onerway?id=${product.id}&type=${PAY_TYPE.applepay}&name=${
 									product.name
@@ -338,6 +351,7 @@ export default function PricingCard() {
 				))}
 			</div>
 			<PayssionSelect {...handlers} product={product} />
+			<AirwallexCallback />
 		</>
 	)
 }
