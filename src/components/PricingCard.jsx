@@ -14,6 +14,11 @@ const features = [
 	['Individual configuration', 'No setup, or hidden fees', 'Credits'],
 	['Supports Up to 2 Devices/Users', 'No setup, or hidden fees', 'Credits'],
 	[
+		'Supports Up to 5 Devices/Users',
+		'No setup, or hidden fees',
+		'120 Credits'
+	],
+	[
 		'Supports Up to 10 Devices/Users',
 		'No setup, or hidden fees',
 		'Credits',
@@ -221,6 +226,10 @@ export default function PricingCard() {
 				{
 					title: 'Basic Package',
 					desc: 'Relevant for multiple users, extended & premium support.',
+				},
+				{
+					title: 'Standard Package',
+					desc:'Perfect for growing teams requiring additional resources and flexibility.'
 				},
 				{
 					title: 'Business Package',
