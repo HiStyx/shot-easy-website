@@ -413,12 +413,12 @@
     "tags": [
       {
         "type": "ghost",
-        "label": "20% off"
+        "label": "10% off"
       }
     ],
     "type": 0,
     "status": 1,
-    "discount": "20%",
+    "discount": "10%",
     "short_name": "12 months",
     "ratio_16_9": "https://files.img-tools.app/products/deepswap.png",
     "ratio_4_3": "https://files.img-tools.app/products/details/deepswap.png"
