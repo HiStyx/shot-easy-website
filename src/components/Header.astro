@@ -53,6 +53,11 @@ const navList = [
     hidden: Astro.cookies.get("vercel_country_code")?.value === "CN",
   },
   {
+    pathname: getRelativeLocaleUrl(lang, "/video-generator"),
+    title: "Video Generator",
+    name: "Video Generator",
+  },
+  {
     pathname: getRelativeLocaleUrl(lang, "/pricing"),
     title: "Pricing",
     name: "Pricing",
