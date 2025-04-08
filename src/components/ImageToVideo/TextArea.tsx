@@ -43,11 +43,11 @@ const TextArea: React.FC<TextAreaProps> = ({
       >
         <div className="flex-1">{extral}</div>
         <div className="flex items-center gap-2">
-          <div className="text-xs text-secondary xl:text-sm">
+          <div className="text-xs text-black xl:text-sm">
             {value?.length ?? 0}/{length}
           </div>
           <div
-            className="h-6 w-6 rounded-full bg-secondary/20 hover:bg-secondary/10 active:bg-secondary/30 xl:cursor-pointer"
+            className="h-6 w-6 rounded-full bg-black/20 hover:bg-black/10 active:bg-black/30 xl:cursor-pointer"
             onClick={onClear}
           >
             <svg

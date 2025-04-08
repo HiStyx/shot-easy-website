@@ -50,7 +50,7 @@ const Tab = ({ children, actived, onClick }: TabProps) => {
   return (
     <div
       className={`h-8 rounded-xl px-3 text-sm font-medium leading-8  xl:h-10 xl:cursor-pointer xl:leading-10 ${
-        actived ? 'bg-secondary text-white' : 'text-secondary'
+        actived ? 'bg-primary-500 text-white' : 'text-black'
       }`}
       onClick={onClick}
     >

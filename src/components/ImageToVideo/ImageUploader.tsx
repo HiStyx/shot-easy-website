@@ -39,10 +39,10 @@ const ImageUploader: React.FC = () => {
   })
 
   return (
-    <div className="h-0 flex-1 cursor-pointer rounded-xl bg-secondary/10 p-2" {...getRootProps()}>
+    <div className="h-0 flex-1 cursor-pointer rounded-xl bg-primary-500/10 p-2" {...getRootProps()}>
       <div
         className={`flex h-full flex-col items-center justify-center rounded-xl border border-dashed ${
-          isDragActive ? 'border-primary' : 'border-secondary/40'
+          isDragActive ? 'border-primary' : 'border-primary-500/40'
         } ${localeFile?.url ? 'border-transparent' : ''}`}
       >
         <input {...getInputProps()} />
@@ -51,7 +51,7 @@ const ImageUploader: React.FC = () => {
             <img src={localeFile.url} alt="" className="h-full w-full object-contain" />
             <div className="absolute right-0 top-0 flex justify-end gap-x-2">
               <Button>
-                <ExchangeIcon className="h-3 w-3 text-secondary" />
+                <ExchangeIcon className="h-3 w-3 text-primary-500" />
               </Button>
               <Button
                 onClick={(e) => {
@@ -62,16 +62,16 @@ const ImageUploader: React.FC = () => {
                   })
                 }}
               >
-                <DeleteIcon className="h-4 w-4 text-secondary" />
+                <DeleteIcon className="h-4 w-4 text-primary-500" />
               </Button>
             </div>
           </div>
         ) : (
           <>
-            <AddIcon className="h-8 w-8 text-secondary" />
+            <AddIcon className="h-8 w-8 text-primary-500" />
             <div
               className={`text-sm font-normal ${
-                isDragActive ? 'text-secondary/40' : 'text-secondary'
+                isDragActive ? 'text-primary-500/40' : 'text-primary-500'
               }`}
             >
               Drag / Click to upload new photo
@@ -91,7 +91,7 @@ interface ButtonProps {
 const Button = ({ children, onClick }: ButtonProps) => {
   return (
     <div
-      className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg bg-secondary/20 text-secondary hover:bg-secondary/10 active:bg-secondary/30"
+      className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg bg-primary-500/20 text-primary-500 hover:bg-primary-500/10 active:bg-primary-500/30"
       onClick={onClick}
     >
       {children}
