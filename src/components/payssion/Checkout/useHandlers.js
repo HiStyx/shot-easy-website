@@ -46,7 +46,7 @@ const useHandlers = () => {
 			if (success) {
 				if (data.hasBillingAddress) {
 					createOrder(product, {
-						pmId: payment.pmId,
+						code: payment.code,
 					})
 				} else {
 					// 打开弹窗
@@ -80,7 +80,7 @@ const useHandlers = () => {
 			})
 
 			const payInfo = {
-				pmId: payment.pmId,
+				pmId: payment.code,
 				country: params.country_code,
 				firstName: params.first_name,
 				lastName: params.last_name,

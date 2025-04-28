@@ -67,7 +67,7 @@ const useHandlers = () => {
 			const res = await post('/users/me/orders', {
 				productId: productId,
 				channel: 9,
-				pmId: payment.pmId,
+				pmId: payment.code,
 				region: 'USA',
 				quantity,
 				returnUrl: `${window.location.origin}/pricing`,

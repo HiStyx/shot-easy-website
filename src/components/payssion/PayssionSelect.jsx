@@ -59,7 +59,7 @@ export default function PayssionSelect({
 					/>
 				</div>
 				<div className='w-full pt-6'>
-					{selectedPayment?.pmId === 'klarna' ? (
+					{selectedPayment?.code === 'klarna' ? (
 						<Checkout product={product} payment={selectedPayment} />
 					) : (
 						<button
