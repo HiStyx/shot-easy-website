@@ -215,7 +215,7 @@ export default function PricingCard() {
 
 	const isLoggedIn = !!localStorage.getItem("user");
 
-	const paymentButtonRender = () => {
+	const paymentButtonRender = (product) => {
 		if (!isLoggedIn) {
 			return (
 				<div
@@ -306,10 +306,17 @@ export default function PricingCard() {
 				})),
 			);
 		});
-		get(`/v3/channels`).then(({ data }) => {
-			setChannels(data);
-		});
 	}, []);
+
+	useEffect(() => {
+		if (isLoggedIn) {
+			get(`/v3/channels`).then(({ data }) => {
+				setChannels(data);
+			});
+		}
+	}, [isLoggedIn]);
+
+console.log(product)
 
 	return (
 		<>
@@ -347,13 +354,13 @@ export default function PricingCard() {
 							)}
 
 							<div className="flex flex-col gap-2 mt-auto">
-								{paymentButtonRender()}
+								{paymentButtonRender(product)}
 							</div>
 						</div>
 					),
 				)}
 			</div>
-			<PayssionSelect {...handlers} product={product} />
+			<PayssionSelect {...handlers} product={product} paymentList={channels.filter(({channel}) => channel===9)?.[0]?.localPaymentMethods || []} />
 			<AirwallexCallback />
 		</>
 	);

@@ -14,8 +14,6 @@ const ORDER_STATUS = {
 }
 
 const useHandlers = () => {
-	// 支付方式列表
-	const [paymentList, setPaymentList] = useState([])
 	// 用户当前选择的支付方式
 	const [selectedPayment, setSelectedPayment] = useState()
 	// 选择支付方式的弹窗是否可见
@@ -27,7 +25,7 @@ const useHandlers = () => {
 	// 轮询中
 	const [polling, setPolling] = useState(false)
 	const order_id = new URLSearchParams(window.location.search)?.get('order_id')
-	let clean
+	let clean = null
 
 	const getOrderStatus = async () => {
 		try {
@@ -100,21 +98,6 @@ const useHandlers = () => {
 			? 1000
 			: undefined
 	)
-	const user = localStorage.getItem('user')
-
-	useEffect(() => {
-		// 初始化获取支付方式列表
-		const _init = async () => {
-			try {
-				const res = await get(`/channels/9/methods`)
-				setPaymentList(res.data)
-			} catch (err) {
-				console.log(err.message)
-			}
-		}
-
-		user && _init()
-	}, [user])
 
 	useEffect(() => {
 		if (order_id) {
@@ -126,7 +109,6 @@ const useHandlers = () => {
 	}, [order_id])
 
 	return {
-		paymentList,
 		selectedPayment,
 		setSelectedPayment,
 		visible,
