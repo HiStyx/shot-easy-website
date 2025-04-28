@@ -11,13 +11,13 @@ const PaymentSelect = ({ options, value, onChange }) => {
 
 	return (
 		<ul className='flex flex-wrap gap-x-4 gap-y-3'>
-			{options.map(({ icon, name, pmId }) => (
-				<li key={pmId} className='w-[calc(50%-8px)] xl:w-[calc(33%-11px)]'>
+			{options.map(({ icon, name, code }) => (
+				<li key={code} className='w-[calc(50%-8px)] xl:w-[calc(33%-11px)]'>
 					<Item
 						icon={icon}
 						name={name}
-						actived={value?.pmId === pmId}
-						onClick={() => onChange({ icon, pmId, name })}
+						actived={value?.code === code}
+						onClick={() => onChange({ icon, code, name })}
 					/>
 				</li>
 			))}
