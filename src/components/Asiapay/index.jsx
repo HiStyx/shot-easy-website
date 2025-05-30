@@ -2,7 +2,7 @@
 import useHandlers from './useHandlers'
 import { createPortal } from 'react-dom'
 
-export default function Asiapay({ product }) {
+export default function Asiapay({ product, channelData }) {
 	const { createOrder, ordering } = useHandlers()
 	return (
 		<>
@@ -14,7 +14,7 @@ export default function Asiapay({ product }) {
 						const login = document.getElementById('login')
 						login.click()
 					} else {
-						createOrder(product)
+						createOrder(product, channelData)
 					}
 				}}
 			/>
