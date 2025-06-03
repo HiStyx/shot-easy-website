@@ -1,0 +1,7 @@
+---
+import FeedbackEmail from './FeedbackEmail.tsx';
+
+const { className } = Astro.props;
+---
+
+<FeedbackEmail client:only="react" className={className} />
