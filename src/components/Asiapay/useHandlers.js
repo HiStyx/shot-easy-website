@@ -99,7 +99,6 @@ const useHandlers = () => {
       if (!success) {
         alert.error(errorMsg)
       }
-      console.log(`payUrl: ${data?.payUrl}`)
       if (data?.payUrl) {
         if (mineIsA) {
           // 通过跳板再跳到B站
