@@ -68,6 +68,7 @@ const useHandlers = () => {
       }
 
       // 无论是否要回退到A站，这里都补充bl保持一致
+      // 结合上面的条件判断，这里相当于url = domain || window.location.origin
       const url = mineIsA ? domain : window.location.origin
       const blSuccess = `${window.btoa(
         CryptoJS.AES.encrypt(
@@ -82,7 +83,7 @@ const useHandlers = () => {
         )
       )}`
       const returnUrl = `${url}/payment?status=success&bl=${blSuccess}`
-      const cancelUrl = `${domain}/payment?status=cancel&bl=${blCancel}`
+      const cancelUrl = `${url}/payment?status=cancel&bl=${blCancel}`
 
       const { id, quantity } = product
       const params = {
