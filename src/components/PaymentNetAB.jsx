@@ -24,11 +24,9 @@ export default function PaymentNetAB() {
 
     // 跳转到收银台逻辑
     if (payUrl) {
-      console.log(`payUrl: ${payUrl}`)
       // 重定向到收银台
       const decryptedUrl = decryptUrl(payUrl)
       cookie.set(FLAG, Date.now().toString(), ONE_HOUR)
-      console.log(`will redirect to: ${decryptedUrl}`)
       location.href = decryptedUrl
       return
     } else if (ext) {
@@ -43,7 +41,6 @@ export default function PaymentNetAB() {
       const backUrl = decryptUrl(bl)
       // 如果backUrl不是当前域名，才跳转
       if (!urlHostIsCurrent(backUrl)) {
-        console.log('backUrl', backUrl)
         cookie.del(FLAG)
 
         const url = new URLSearchParams()
@@ -80,7 +77,6 @@ const urlHostIsCurrent = (urlString) => {
 
   // 解析urlString的host
   const urlHost = new URL(urlString).host
-  console.log(`urlHost: ${urlHost}, current Host: ${currentHost}`)
 
   // 判断两个host是否相同
   const isSameDomain = urlHost === currentHost

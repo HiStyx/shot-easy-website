@@ -3,7 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 import { Image } from 'astro:assets'
 import { getLocale, getLang } from '@i18n/index'
 import { CONFIG, LANGUAGES } from '@lib/config'
-import FeedbackEmail from '@components/FeedbackEmail.tsx'
+import FeedbackEmail from '@components/FeedbackEmailWrapper.astro'
 
 const { locale } = Astro.params
 const lang = getLocale(locale)
