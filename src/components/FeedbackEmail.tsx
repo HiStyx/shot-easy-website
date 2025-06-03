@@ -15,9 +15,9 @@ const FeedbackEmail: React.FC<Props> = ({ className }) => {
 // 根据环境变量设置feedback邮箱
 enum FEEDBACK_EMAILS {
   'img-tools.app' = 'feedback@img-tools.app',
-  'img-tools.co' = 'feedback@img-tools.co',
+  'image-tools.co' = 'feedback@image-tools.co',
   'img-tools.relaxops.cc' = 'feedback@img-tools.app',
-  'img-tools-a.relaxops.cc' = 'feedback@img-tools.co',
+  'img-tools-a.relaxops.cc' = 'feedback@image-tools.co',
 }
 
 const hostname = window.location.hostname.replace(/^www\./, '')
